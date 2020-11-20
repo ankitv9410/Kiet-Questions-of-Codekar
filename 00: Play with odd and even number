@@ -1,0 +1,41 @@
+Rule:
+1-If first array 2-digit element is even and second array 2-digit element is odd then subracted elements.
+2-If first array 2-digit element is odd and second array 2-digit element is even then add those elements.
+3-If first array element is even and second array element is even then multiply those elements.(two or more than digit having elements for multiply)
+3-If first array element is odd and second array element is odd then multiply those elements.(two or more than digit having elements for multiply)
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+public class Solution {
+    public static void main(String[] args) {
+    	Scanner sc  = new Scanner(System.in);
+    	int n = sc.nextInt();
+    	int []arr1 = new int[n];
+    	int []arr2 = new int[n];    	
+    	for(int i=0;i<n;i++) 
+    		arr1[i]=sc.nextInt();
+    	for(int i=0;i<n;i++)
+    		arr2[i]=sc.nextInt();
+    	sc.close();
+    	List<Integer> resultList = new ArrayList<>();
+    	
+    	for(int i=0;i<n;i++) {
+    		boolean arr1Check=arr1[i]%2==0;
+    		boolean arr2Check=arr2[i]%2==0;
+    			if(arr1Check!=arr2Check)
+    			{
+    				if(9<arr1[i] && arr1[i]<100 && 9<arr2[i] && arr2[i]<100 )
+    					resultList.add((arr1Check==true && arr2Check==false)?Math.subtractExact(arr1[i], arr2[i]):Math.addExact(arr1[i], arr2[i]));
+					else
+						resultList.add(0);
+    			}
+    			else
+    				resultList.add(Math.multiplyExact(arr1[i], arr2[i]));
+    			{
+    					
+    	}
+    }
+    	resultList.forEach(System.out::println);
+}
+}
