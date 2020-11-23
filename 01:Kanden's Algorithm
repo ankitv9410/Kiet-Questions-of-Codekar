@@ -1,0 +1,24 @@
+Rule->
+1.Value of N is greater or equals to 1 and less than 106.
+2.Value of Array is greater or equals to -107 and less or equals to 107.
+
+PROGRAM
+class Solution{
+	public static void main(String args[]) {
+		int []n= {1,2,3,-2,5};
+//		int []n= {4,6,7,3,2};
+//		int []n= {7,-1,-5,4};
+//		int []n= {-1,-2,-3,-4};
+//		int []n= {4,3,-2,6,-14,7,-1,4,5,7,-10,2,9,-10,-5,-9,6,1};
+		int current=n[0];
+		int overall=n[0];
+		for(int i=1;i<n.length;i++) {
+				current+=n[i];
+				if(current>overall)
+					overall=current;
+				else if(current<0)
+					current=0;
+		}
+		System.out.println(overall);
+	}
+} 
