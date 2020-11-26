@@ -1,0 +1,27 @@
+package ankit;
+class Class2 {
+	public static void main(String args[]) {
+		String input = "HE*<LL>O";
+		String []s = input.split("");
+		String output = new String();
+		boolean isHome=false;
+		for(int i=0;i<s.length;i++) {
+			if(s[i].equals("*")) 
+				output = input.substring(0, i-1);
+			else if(s[i].equals("<"))
+				isHome=true;
+			else if(s[i].equals(">"))
+				isHome=false;
+		
+			if(isHome) {
+				output=s[i]+output;
+			System.out.println(output);
+			}
+			else {
+				output=output+s[i];
+				System.out.println(output);
+			}
+		}
+		System.out.println(output);
+	}
+}
