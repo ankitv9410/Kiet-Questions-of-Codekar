@@ -6,9 +6,9 @@ PROGRAM
 class Solution{
 	public static void main(String args[]) {
 		int []n= {1,2,3,-2,5};
-//		int []n= {4,6,7,3,2};
-//		int []n= {7,-1,-5,4};
-//		int []n= {-1,-2,-3,-4};
+//    input->	int []n= {4,6,7,3,2}; output->22
+//		int []n= {7,-1,-5,4};     7
+//		int []n= {-1,-2,-3,-4};  -1
 //		int []n= {4,3,-2,6,-14,7,-1,4,5,7,-10,2,9,-10,-5,-9,6,1};
 		int current=n[0];
 		int overall=n[0];
