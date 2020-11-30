@@ -1,0 +1,18 @@
+package ankit;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+class Solution{
+	public static void main(String args[]) {
+		 int [][]n = {{10,20,30,40},{15,25,35,45},{24,29,37,48},{32,33,39,50}};
+		 int l1=7;
+		List<Integer> l = new ArrayList<>();
+		for(int i=0;i<n.length;i++) {
+			for(int j=0;j<n.length;j++) {
+				l.add(n[i][j]);
+				Collections.sort(l);
+			}
+		}
+			System.out.println(l.get(l1-1));
+	}
+}
