@@ -1,0 +1,18 @@
+package ankit;
+class Solution{
+	public static void main(String args[]) {
+		
+		int rupees=4;
+		int []coins= {1,2,3};
+		
+		int []coinsPay = new int[rupees+1];
+		coinsPay[0] = 1;
+		
+		for(int i=0;i<coins.length;i++) {
+			for(int j=coins[i];j<coinsPay.length;j++) {
+				coinsPay[j]+=coinsPay[j-coins[i]];
+			}
+		}
+		System.out.println(coinsPay[rupees]);
+	}
+}
