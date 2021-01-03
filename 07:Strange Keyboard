@@ -25,3 +25,46 @@ class Class2 {
 		System.out.println(output);
 	}
 }
+
+
+				OR
+				
+import java.util.Stack;
+
+class Demo {
+	public static void main(String args[]) {
+		String input = "HE*<LA>O";
+		String[] s = input.split("");
+		Stack<String> output = new Stack<>();
+		int count=0;
+
+		boolean isVisited = false;
+		boolean isHome = false;
+		for (int i = 0; i < s.length; i++) {
+			if (s[i].equals("*")) {
+				output.pop();
+				isVisited = true;
+			} else if (s[i].equals("<")) {
+				isHome = true;
+				count=0;
+				isVisited = true;
+			} else if (s[i].equals(">")) {
+				isHome = false;
+				isVisited = true;
+			}
+			if (!isVisited) {
+				if (isHome) {
+					output.add(0+count, s[i]);
+					count++;
+				} else {
+					output.add(s[i]);
+				}
+			}
+			else
+				isVisited=false;
+		}
+		for(String o:output)
+			System.out.print(o);
+	}
+}
+
