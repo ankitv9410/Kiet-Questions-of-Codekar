@@ -1,0 +1,55 @@
+package ankit;
+
+import java.util.Scanner;
+
+class Solution {
+	float[] car;
+	/*Input1  testCase->2  n=5 {1,2,3,4,5}  output->24.5
+	 *Input2  	       n=6 {2,5,2,0,1,0}  output->16
+	 *Input3  testCase->3  n=5 {1,1,1,2,0}  output->6
+	 *Input4	       n=6 {0,1,2,5,4,1}  output->0 	 
+	 *Input5 	       n=3 {2,2,3}  output->11	
+	 * */
+	public static void main(String[] args) {
+		Solution s = new Solution();
+		{
+			Scanner sc = new Scanner(System.in);
+			int n = 0;
+			int testCase = sc.nextInt();
+			for (int i = 0; i < testCase; i++) {
+				n = sc.nextInt();
+				s.car = new float[n];
+				for (int j = 0; j < n; j++)
+					s.car[j] = sc.nextInt();
+				float fuel = 0.5f, litre = 1f, remainLitre = 1f;
+				int distance = 0;
+				if (s.car[0] == 0 && s.car[1] == 1)
+					System.out.println("0");
+				else {
+					for (int k = 0; k < 5; k++) {
+						int l = 0;
+						while (l < n) {
+							distance++;
+							if (s.car[l] >= 2) {
+								if (l % 2 != 0) {
+									litre += s.car[l];
+									remainLitre = 0;
+								} else {
+									litre += s.car[l] / 2;
+									remainLitre = s.car[l] / 2;
+								}
+							} else
+								remainLitre = 0;
+							litre -= fuel;
+							float temp = s.car[l];
+							s.car[l] = remainLitre;
+							l++;
+						}
+					}
+					System.out.println((2 * litre) + distance);
+				}
+			}
+			sc.close();
+		}
+	}
+}
