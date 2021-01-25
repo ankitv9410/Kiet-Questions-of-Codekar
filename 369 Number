@@ -1,0 +1,67 @@
+A number is said to be a 369 number if
+
+The count of 3s is equal to count of 6s and the count of 6s is equal to count of 9s. The count of 3s is at least 1. 
+For Example 12369, 383676989, 396 all are 369 numbers whereas 213, 342143, 111 are not.
+
+Given A and B find how many 369 numbers are there in the interval [A, B]
+
+Input Format
+
+line containing 2 integers A and B
+
+Constraints
+
+1<=A<=B<=10^5
+
+Output Format
+
+the number of 369 numbers between A and B inclusive
+
+Sample Input 0
+
+360 400
+Sample Output 0
+
+2
+Explanation 0
+
+only 369 and 396 follow the rule from 360 to 400. So, count would be 2
+----------------------------------------------------------------------------------------
+Test Cases
+Input1 360 400 Output1 2
+Input2 121 4325 Output1 60
+Input3 300 700 Output1 4
+Input4 100 2000 Output1 12
+----------------------------------------------------------------------------------------
+                           Program
+----------------------------------------------------------------------------------------
+import java.util.Scanner;
+
+class Solution {
+	public static void main(String args[]) {
+		int count = 0;
+		Scanner sc = new Scanner(System.in);
+		int firstNo = sc.nextInt();
+		int secondNo = sc.nextInt();
+		sc.close();
+
+		for (int i = firstNo; i <= secondNo; i++) {
+			String number = String.valueOf(i);
+			String[] s = number.split("");
+			int count1 = 0, count2 = 0, count3 = 0;
+			for (int j = 0; j < s.length; j++) {
+				if (s[j].equals("3"))
+					count1++;
+				if (s[j].equals("6"))
+					count2++;
+				if (s[j].equals("9"))
+					count3++;
+			}
+			if (count1 > 0) {
+				if (count1 == count2 && count3 == count2)
+					count++;
+			}
+		}
+		System.out.println(count);
+	}
+}
