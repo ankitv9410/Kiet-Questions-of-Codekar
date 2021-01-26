@@ -1,0 +1,51 @@
+import java.util.Scanner;
+
+class Solution {
+	public static void foundPrimeNumber(int number) {
+		int temp1, temp2, foundNumber = 0;
+		for (int k = 1; k < number / 2; k++) {
+			boolean found1 = true, found2 = true;
+			temp1 = number + k;
+			temp2 = number - k;
+			for (int j = 2; j < number / 2; j++) {
+				if (temp1 % j == 0) {
+					found1 = false;
+					break;
+				}
+			}
+			if (found1) {
+				foundNumber = temp1;
+				break;
+			}
+			for (int j = 2; j < number / 2; j++) {
+				if (temp2 % j == 0) {
+					found2 = false;
+					break;
+				}
+			}
+			if (found2) {
+				foundNumber = temp2;
+				break;
+			}
+		}
+
+		int result = foundNumber - number;
+		System.out.println(result);
+	}
+
+	public static void main(String args[]) {
+		Scanner sc = new Scanner(System.in);
+		int number = sc.nextInt();
+		boolean found = true;
+		for (int i = 2; i < number / 2; i++) {
+			if (number % i == 0) {
+				found = false;
+				break;
+			}
+		}
+		if (found)
+			System.out.println("0");
+		else
+			foundPrimeNumber(number);
+	}
+}
