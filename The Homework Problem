@@ -1,28 +1,64 @@
-Vivek is assigned a task today by Sumeet Sir. He is given an array A containing N integers. His task is to change all elements of array to some minimum value 'x', that is, A[i]=x ; for all 1 ≤ i≤ N such that product of all elements of this new array is strictly greater than the product of all elements of the initial array.
+Vivek is assigned a task today by Sumeet Sir. He is given an array A containing N integers. 
+His task is to change all elements of array to some minimum value 'x', that is, A[i]=x ; for all 1 ≤ i≤ N 
+such that product of all elements of this new array is strictly greater than the product of all elements of the initial array.
 
 Note that the value of 'x' should be as minimum as possible.
 
 Input Format
-
 The first line consists of an integer N, denoting the number of elements in the array. The next line consists of N space separated integers, denoting the array elements.
 
 Constraints
-
 1 <= N <= 10^5 1 <= A[i] <= 10^5
 
 Output Format
-
 Print the value of 'x'.
 
 Sample Input 0
-
 5
 4 2 1 10 6
+
 Sample Output 0
-
 4
-Explanation 0
 
+Explanation 0
 Initial array product =4∗2∗1∗10∗6=480
 
 If all elements become 4, then product =4∗4∗4∗4∗4=1024. Had all elements become 3, product would be =243 which is less than 480. Hence, value of x is 4.
+--------------------------------------------------------------------------------------------------------------------
+Test Cases
+Input1-> 6
+1 2 3 4 5 6 
+Ouput1->3
+Input2-> 8
+4 5 3 5 60 3 2 10 
+Ouput1->6
+Input3-> 4
+10 20 30 40 
+Ouput3->23
+--------------------------------------------------------------------------------------------------------------------
+import java.util.Scanner;
+
+class Solution {
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        int number = sc.nextInt();
+        int multFirstNumber = 1;
+        for (int i = 0; i < number; i++)
+            multFirstNumber *= sc.nextInt();
+        sc.close();
+
+        int i = 1;
+        boolean done = false;
+        while (!done) {
+            int multSecondNumber = 1;
+            for (int j = 0; j < number; j++)
+                multSecondNumber *= i;
+
+            if (multSecondNumber > multFirstNumber) {
+                System.out.println(i);
+                done = true;
+            }
+            i++;
+        }
+    }
+}
