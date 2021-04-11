@@ -16,10 +16,18 @@ Sample Output 0
 HELLO@
 ------------------------------------
 public class Solution {
-
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         String s = sc.nextLine();
         System.out.print(s.toUpperCase());
     }
 }
+-------------------------------------
+import java.util.*;
+public class Solution {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println(sc.next().toUpperCase());
+	}
+}
+
