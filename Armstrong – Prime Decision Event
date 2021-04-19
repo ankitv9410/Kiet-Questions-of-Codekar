@@ -1,0 +1,61 @@
+Prime numbers are numbers that have only 2 factors. Similarly, Armstrong number is a number that is equal to the sum of nth power of the digits of a n-bit number.
+
+Example: Armstrong Number 153 = 13 + 53 + 33 = 1+125+27
+
+We have to verify that the given number should be both prime & armstrong. If a number satisfy the basic definition of both print “Y” else print ”N” in the output.
+
+Input Format
+Accept a n-bit number as an input.
+
+Constraints
+1 <= n <= 4
+
+Output Format
+Print either “Y” or “N” as output.
+
+Sample Input 0
+1
+Sample Output 0
+Y
+----------------------------------------------------------------------------
+import java.util.Scanner;
+
+public class Solution {
+    public static void main(String[] args) {
+        boolean primeNo = false, armstrongNo = false;
+        int sum = 0,primeCount = 0,no,rem;
+        String s;
+
+        Scanner sc = new Scanner(System.in);
+        no = sc.nextInt();
+
+        for (int i = 1; i < (no / 2); i++)
+            if (no % i == 0)
+                primeCount++;
+
+        if (primeCount < 2)
+            primeNo = true;
+
+        s = String.valueOf(no);
+
+        int n = no;
+        while (n != 0) {
+            int r = 0, mult = 1;
+            rem = n % 10;
+            r = rem;
+            n = n / 10;
+            for (int i = 0; i < s.length(); i++) {
+                mult *= r;
+            }
+            sum += mult;
+        }
+
+        if(sum == no)
+            armstrongNo=true;
+
+        if (primeNo && armstrongNo)
+            System.out.println("Y");
+        else
+            System.out.println("N");    
+        }
+}
