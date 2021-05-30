@@ -1,0 +1,39 @@
+Pooja has three gloves in his almirah. Each glove has one of 20 possible colours, which are represented by integers between 1 and 20. Specifically, the colours of the gloves are 
+A,B & C.
+Pooja has to wear two gloves during winters which have the same colour. Help Pooja find out if that is possible or not.
+
+Input Format
+First line contains integer input for the color of the three gloves A,B & C.
+
+Constraints
+1 <= A,B,C <= 20
+
+Output Format
+If pair found print “Yes” otherwise “No”.
+
+Sample Input 0
+1 2 3
+
+Sample Output 0
+No
+------------------------------------
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        int c = sc.nextInt();
+
+        if (a == b && a == c)
+            System.out.println("Yes");
+        else if (b == a && b == c)
+            System.out.println("Yes");
+        else if (c == a && c == b)
+            System.out.println("Yes");
+        else
+            System.out.println("No");
+    }
+}
