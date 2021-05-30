@@ -40,3 +40,6 @@ public class Solution {
         Solution.decimalToBinary(n, p);
     }
 }
+Test Cases
+255 5  Yes
+0 2 No
