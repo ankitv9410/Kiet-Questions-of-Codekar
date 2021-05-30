@@ -1,0 +1,42 @@
+Sucheta got a number ‘n’ as input. She got an another number ‘p’ as input. Now she got the task to identify that the pth from left is 1 or 0.
+
+Input Format
+Enter the value of n & p separated by space.
+
+Constraints
+1< = n <= 255 1<= p <=8
+
+Output Format
+Print “Yes’ for 1 & “No” for 0.
+
+Sample Input 0
+32 3
+
+Sample Output 0
+No
+---------------------------------------------------
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+        static void decimalToBinary(int n,int p) {
+        int[] arr = new int[35];
+        int temp = 0;
+        while (n > 0) {
+            arr[temp] = n % 2;
+            n = n / 2;
+            temp++;
+        }
+        if(arr[p]==1)
+            System.out.print("Yes");
+        else
+            System.out.print("No");
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int p = sc.nextInt();
+        Solution.decimalToBinary(n, p);
+    }
+}
