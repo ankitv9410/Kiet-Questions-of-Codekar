@@ -1,0 +1,14 @@
+import java.util.Scanner;
+
+class Rough {
+	public static void main(String arg[]) {
+		Scanner sc = new Scanner(System.in);
+		int m = sc.nextInt();
+		int k = sc.nextInt();
+
+		int mult = m * k;
+		int deadlock = m - 1;
+		int total = mult - deadlock;
+		System.out.println(total);
+	}
+}
