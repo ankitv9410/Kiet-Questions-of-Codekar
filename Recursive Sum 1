@@ -1,0 +1,34 @@
+You need to find the sum of digits of a number ‘n’ using recursion.
+Note: Solve this question using recursion only.
+
+Input Format
+Enter the number ‘n’.
+
+Constraints
+1<= n <= 5000
+
+Output Format
+Print the sum
+
+Sample Input 0
+499
+Sample Output 0
+22
+---------------------------------------------------------------------------
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int r=0,sum=0;
+        while (n > 0) {
+            r = n%10;
+            sum += r;
+            n = n/10;
+        }
+        System.out.println(sum);
+    }
+}
