@@ -1,0 +1,37 @@
+Rashu got a task to match the characters inside the string. She got two different string as input and verify that if both have same length then the first three characters of 
+both the strings are same or not. If same then print ‘Yes’ else print ‘No’.
+
+Input Format
+Enter two different strings of length ‘n’ separated by spaces.
+
+Constraints
+1<= n <= 20
+
+Output Format
+Print ‘Yes’ or ‘No’
+
+Sample Input 0
+aryan ary@@
+Sample Output 0
+Yes
+--------------------------------------------------------------------------
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String s1 = sc.next();
+        String s2 = sc.next();
+        
+        if(s1.length()==s2.length()) {
+            if(s1.charAt(0)==s2.charAt(0) && s1.charAt(1)==s2.charAt(1) && s1.charAt(2)==s2.charAt(2))
+                System.out.println("Yes");
+            else
+                System.out.println("No");
+        }
+        else
+            System.out.println("No");
+    }
+}
